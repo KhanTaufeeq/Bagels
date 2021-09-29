@@ -13,26 +13,26 @@ print("3.for completely wrong guess it will print 'Bagels'\n")
 def bagel():
     num = random.randint(100,1000)
     num = str(num)
-    att = 0
-    while(att < 10):
+    attempt = 0
+    while(attempt < 10):
         j = 0
-        a = []
+        clues = []
         x = input('Enter the number : ')
         if x == num:
             break
         for i in num:
             if(x[j] == i):
-                a.append('Fermi')
+                clues.append('Fermi')
             elif(x[j] in num):
-                a.append('Pico')
+                clues.append('Pico')
             j = j + 1
-        if len(a) == 0:
+        if len(clues) == 0:
            print('Bagels')
         else:
-           a.sort()
-           return ' '.join(a)
-        att = att + 1
-    if att == 10:
+           clues.sort()
+           print (' '.join(clues))
+        attempt = attempt + 1
+    if attempt == 10:
         print('oops! no more attempts\n')
         print('The number was : ', num)
     else:
